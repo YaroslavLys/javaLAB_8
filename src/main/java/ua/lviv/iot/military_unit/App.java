@@ -11,7 +11,7 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         Pistol glock = new Pistol("Good", Country.FRANCE, 300, "Scouting", 100, "7.62", "Glock-17");
-        Tank tiger = new Tank( Country.CHINA, 750000, "Attack", 3000, 80, 2000, 1500, "Heavy");
+        Tank tiger = new Tank(Country.CHINA, 750000, "Attack", 3000, 80, 2000, 1500, "Heavy");
         Drone falcon = new Drone(Country.ISRAEL, 2000, "Scouting", 0, 120, 5, 50, "67B");
         GhillieSuit ghost = new GhillieSuit(Country.GERMANY, 400, "Scouting", 10, CamouflageType.WOODLAND, new Cloth("Poliester", "High"));
         Knife kerambit = new Knife("Low", Country.FRANCE, 250, "Scouting", 20, KnifeType.KERAMBIT, "Small");

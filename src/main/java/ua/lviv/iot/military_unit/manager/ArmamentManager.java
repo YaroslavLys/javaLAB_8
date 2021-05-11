@@ -27,7 +27,7 @@ public class ArmamentManager {
 
     public void sortByPrice(SortOrder order) {
         if (order == SortOrder.ASC) {
-            this.arsenal.sort((Armament firstItem, Armament secondItem) ->
+            this.arsenal.sort((firstItem, secondItem) ->
                     firstItem.getPrice() - secondItem.getPrice());
         } else {
             this.arsenal.sort((Armament firstItem, Armament secondItem) ->
@@ -37,10 +37,10 @@ public class ArmamentManager {
 
     public void sortByMortalityRate(SortOrder order) {
         if (order == SortOrder.ASC) {
-            this.arsenal.sort((Armament firstItem, Armament secondItem) ->
+            this.arsenal.sort((firstItem, secondItem) ->
                     firstItem.getMortalityRate() - secondItem.getMortalityRate());
         } else {
-            this.arsenal.sort((Armament firstItem, Armament secondItem) ->
+            this.arsenal.sort((firstItem, secondItem) ->
                     secondItem.getMortalityRate() - firstItem.getMortalityRate());
         }
     }

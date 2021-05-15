@@ -1,4 +1,5 @@
 package ua.lviv.iot.military_unit.manager;
+
 import ua.lviv.iot.military_unit.models.Armament;
 
 import java.util.*;
@@ -14,7 +15,7 @@ public class ArmamentManager {
     }
 
     public void printArsenal() {
-        for (Armament item: arsenal) {
+        for (Armament item : arsenal) {
             System.out.println("---------");
             System.out.println(item);
             System.out.println("function: " + item.getFunction());
@@ -26,21 +27,21 @@ public class ArmamentManager {
 
     public void sortByPrice(SortOrder order) {
         if (order == SortOrder.ASC) {
-            this.arsenal.sort((Armament firstItem, Armament secondItem)->
-                    firstItem.getPrice()-secondItem.getPrice());
+            this.arsenal.sort((firstItem, secondItem) ->
+                    firstItem.getPrice() - secondItem.getPrice());
         } else {
-            this.arsenal.sort((Armament firstItem, Armament secondItem)->
-                    secondItem.getPrice()-firstItem.getPrice());
+            this.arsenal.sort((Armament firstItem, Armament secondItem) ->
+                    secondItem.getPrice() - firstItem.getPrice());
         }
     }
 
     public void sortByMortalityRate(SortOrder order) {
         if (order == SortOrder.ASC) {
-            this.arsenal.sort((Armament firstItem, Armament secondItem)->
-                    firstItem.getMortalityRate()-secondItem.getMortalityRate());
+            this.arsenal.sort((firstItem, secondItem) ->
+                    firstItem.getMortalityRate() - secondItem.getMortalityRate());
         } else {
-            this.arsenal.sort((Armament firstItem, Armament secondItem)->
-                    secondItem.getMortalityRate()-firstItem.getMortalityRate());
+            this.arsenal.sort((firstItem, secondItem) ->
+                    secondItem.getMortalityRate() - firstItem.getMortalityRate());
         }
     }
 

@@ -2,17 +2,16 @@ package ua.lviv.iot.military_unit;
 
 import ua.lviv.iot.military_unit.manager.ArmamentManager;
 import ua.lviv.iot.military_unit.manager.SortOrder;
-import ua.lviv.iot.military_unit.models.Armament;
-import ua.lviv.iot.military_unit.models.Drone;
 import ua.lviv.iot.military_unit.models.Pistol;
+import ua.lviv.iot.military_unit.models.Drone;
 import ua.lviv.iot.military_unit.models.Tank;
 import ua.lviv.iot.military_unit.models.GhillieSuit;
 import ua.lviv.iot.military_unit.models.Country;
 import ua.lviv.iot.military_unit.models.Knife;
 import ua.lviv.iot.military_unit.models.CamouflageType;
-import ua.lviv.iot.military_unit.models.KnifeType;
 import ua.lviv.iot.military_unit.models.Cloth;
-
+import ua.lviv.iot.military_unit.models.KnifeType;
+import ua.lviv.iot.military_unit.models.Armament;
 
 import java.util.ArrayList;
 import java.util.List;

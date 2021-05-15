@@ -1,53 +1,45 @@
 package ua.lviv.iot.military_unit.models;
 
+
 import lombok.Data;
 
-import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
+@Entity
 public class Armament {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private Country originCountry;
     private int price;
-    private String function;
+    private String functionality;
     private int mortalityRate;
 
-    Armament() {
+    public Armament() {
     }
 
-    public Armament(int id, String name) {
+    Armament(int id, String name, Country originCountry, int price, String functionality, int mortalityRate) {
         this.id = id;
         this.name = name;
-    }
-
-    Armament(Country originCountry, int price, String function, int mortalityRate) {
         this.originCountry = originCountry;
         this.price = price;
-        this.function = function;
+        this.functionality = functionality;
         this.mortalityRate = mortalityRate;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof Armament)) {
-            return false;
-        }
-        Armament armament = (Armament) o;
-        return Objects.equals(id, armament.id) && Objects.equals(name, armament.name);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name);
-    }
-
-    public String toJson() {
-        return String.format("{\"id\":%d,\"name\":\"%s\"}", id, name);
+    Armament(Country originCountry, int price, String functionality, int mortalityRate) {
+        this.originCountry = originCountry;
+        this.price = price;
+        this.functionality = functionality;
+        this.mortalityRate = mortalityRate;
     }
 
 

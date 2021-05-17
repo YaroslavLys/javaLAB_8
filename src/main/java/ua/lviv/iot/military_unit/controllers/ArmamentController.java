@@ -38,10 +38,10 @@ public class ArmamentController {
     @GetMapping("/{id}")
     public ResponseEntity<?> get(@PathVariable int id) {
         Optional<Armament> armamentOptional = service.get(id);
-        if (!armamentOptional.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else  {
+        if (armamentOptional.isPresent()) {
             return new ResponseEntity<>(armamentOptional, HttpStatus.OK);
+        } else  {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
@@ -54,23 +54,23 @@ public class ArmamentController {
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Armament armament, @PathVariable int id) {
         Optional<Armament> armamentOptional = service.get(id);
-        if (!armamentOptional.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
+        if (armamentOptional.isPresent()) {
             armament.setId(id);
             service.save(armament);
             return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable int id) {
         Optional<Armament> armamentOptional = service.get(id);
-        if(!armamentOptional.isPresent()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        } else {
+        if(armamentOptional.isPresent()) {
             service.delete(id);
             return new ResponseEntity<>(HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 }
